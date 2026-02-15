@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { MdDashboard } from "react-icons/md";
 import "./account.css";
 import { IoMdLogOut } from "react-icons/io";

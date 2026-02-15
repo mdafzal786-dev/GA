@@ -1,5 +1,5 @@
 // Chatbot.jsx
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./Chatbot.css";
 import aiAvatar from "../../assets/Image/Logo.png"; // ✅ AI Image
 

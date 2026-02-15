@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from "react";
 import { server } from "../../main";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";

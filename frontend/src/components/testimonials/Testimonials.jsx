@@ -1,4 +1,3 @@
-import React from 'react'
 import "./Testimonials.css"
 import Afzal1 from '../../assets/Image/Afzal1.jpg';
 

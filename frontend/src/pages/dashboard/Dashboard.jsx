@@ -1,4 +1,3 @@
-import React from "react";
 import "./dashboard.css";
 import { CourseData } from "../../context/CourseContext";
 import CourseCard from "../../components/courseCard/CourseCard";
