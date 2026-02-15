@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   FaBars,
@@ -9,11 +9,10 @@ import {
   FaClipboardList,
   FaHome,
   FaInfoCircle,
-  FaSearch,
 } from "react-icons/fa";
 import { FaMoon, FaSun } from "react-icons/fa";  // 🌙☀️ ICONS
 import "./header.css";
-import logo from "../../assets/Image/logo.png";
+import logo from "../../assets/Image/Logo.png";
 
 const Header = ({ isAuth }) => {
   const [menuOpen, setMenuOpen] = useState(false);
