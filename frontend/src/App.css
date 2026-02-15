@@ -1,0 +1,244 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+:root {
+  --color-bg-light: #ffffff;        /* Pure white background */
+  --color-text-dark: #333333;        /* Dark text for contrast */
+  --color-accent-gold: #b8860b;     /* Dark Goldenrod - Primary gold accent */
+  --color-light-gold: #ffd700;      /* Gold */
+  --color-highlight-cream: #fffbe0;  /* Very light cream/yellow for soft glow */
+  --color-hover-dark: #e0ac00;       /* Darker gold for subtle hover */
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-bg-light); /* White background */
+  color: var(--color-text-dark); /* Dark text for readability */
+  font-family: Arial, sans-serif;
+}
+
+/* Slider Styles */
+.slider {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.slide-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Content Styles */
+.home-content {
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+@keyframes colorfulRunningText {
+  0% {
+    transform: translateX(100%);
+    background-position: 0%;
+  }
+  100% {
+    transform: translateX(-100%);
+    background-position: 200%;
+  }
+}
+
+/* --- ANIMATED TEXT STYLES (GOLDEN GRADIENTS) --- */
+.home-content h1 {
+  font-size: 3em;
+  color: transparent;
+  /* UPDATED GRADIENT: Warm golds, yellows, and creams */
+  background: linear-gradient(90deg, 
+    var(--color-light-gold), 
+    #fff8e0, 
+    var(--color-accent-gold), 
+    var(--color-light-gold), 
+    var(--color-accent-gold)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  white-space: nowrap;
+  display: inline-block;
+  animation: colorfulRunningText 10s linear infinite;
+}
+
+.home-content p {
+  font-size: 1.5em;
+  font-weight: bold;
+  animation: highLevelTextAnimation 3s ease-in-out infinite alternate;
+  /* UPDATED GRADIENT: Subtle warm gold gradient */
+  background: linear-gradient(90deg, 
+    var(--color-accent-gold), 
+    var(--color-light-gold), 
+    var(--color-accent-gold)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-top: 20px;
+}
+/* Keyframes for highLevelTextAnimation are assumed to be defined elsewhere or are simple scale/opacity changes */
+@keyframes highLevelTextAnimation {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.02); opacity: 1; }
+}
+
+
+/* --- GORGEOUS ANIMATED BUTTON (GOLDEN) --- */
+.common-btn {
+  /* UPDATED BUTTON GRADIENT: Rich, warm gold tones */
+  background: linear-gradient(45deg, 
+    #e0ac00, 
+    var(--color-accent-gold), 
+    var(--color-light-gold), 
+    #ffcc00
+  );
+  background-size: 300% 300%;
+  color: var(--color-text-dark); /* Dark text on gold */
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  /* Soft, warm shadow */
+  box-shadow: 0 0 10px rgba(184, 134, 11, 0.4); 
+  animation: pulseBtn 3s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Golden Glow Pulse Border */
+.common-btn::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  /* UPDATED BORDER GRADIENT: Lighter, brighter golds and yellows for glow */
+  background: linear-gradient(135deg, 
+    #ffcc00, 
+    #ffeb3b, 
+    var(--color-light-gold), 
+    #ffcc00
+  );
+  z-index: -1;
+  border-radius: 12px;
+  filter: blur(8px); /* Less aggressive blur */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background-size: 200% 200%;
+  animation: neonRing 6s linear infinite;
+}
+
+/* Button Label Animation (White/Cream Shine) */
+.common-btn span {
+  /* Text remains a light, shimmery gradient */
+  background: linear-gradient(90deg, #333333, #ffffff, #333333);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmerText 4s linear infinite;
+}
+
+/* Hover Effects */
+.common-btn:hover {
+  transform: scale(1.07);
+  /* Brighter, more focused gold shadow on hover */
+  box-shadow: 0 0 25px var(--color-light-gold), 0 0 35px var(--color-accent-gold); 
+}
+
+.common-btn:hover::before {
+  opacity: 1;
+}
+
+/* Pulse Background Animation */
+@keyframes pulseBtn {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Border Glow Animation */
+@keyframes neonRing {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Text Shine Animation */
+@keyframes shimmerText {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .slider {
+    padding: 0 10px;
+  }
+
+  .slide-image {
+    height: 300px;
+  }
+
+  .home-content h1 {
+    font-size: 2em;
+  }
+
+  .common-btn {
+    font-size: 16px;
+    padding: 10px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    padding: 0 10px;
+  }
+
+  .slide-image {
+    height: 250px;
+  }
+
+  .home-content h1 {
+    font-size: 1.8em;
+  }
+
+  .common-btn {
+    font-size: 15px;
+    padding: 8px 18px;
+  }
+}

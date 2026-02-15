@@ -1,0 +1,158 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Modern font */
+  line-height: 1.8;
+  background: linear-gradient(135deg, #e4f5f9 50%, #d1d1d1); /* Cool background gradient */
+  color: #2c3e50;
+}
+
+/* Lecture Page Styling */
+.lecture-page {
+  display: flex;
+  justify-content: space-between;
+  min-height: 80vh;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9); /* White overlay for content */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .left {
+    width: 70%;
+    padding: 1.5rem;
+    animation: fadeInLeft 1s ease;
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+
+  .right {
+    width: 30%;
+    animation: fadeInRight 1s ease;
+
+    .lecture-form {
+      background: linear-gradient(135deg, #ffffff, #b8e994); /* Neon green gradient */
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+
+      h2 {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: #16a085; /* Teal color for the heading */
+        margin-bottom: 1rem;
+      }
+
+      form {
+        text-align: left;
+
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-size: 0.9rem;
+          color: #2c3e50;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.75rem;
+          margin-bottom: 1rem;
+          border: 1px solid #16a085; /* Teal border */
+          border-radius: 8px;
+          transition: border 0.3s ease;
+
+          &:focus {
+            border-color: #2ecc71; /* Neon green focus */
+            outline: none;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+
+    .lecture-number {
+      background-color: #ffffff;
+      padding: 0.75rem;
+      border: 1px solid #2c3e50;
+      margin-top: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        background-color: #16a085; /* Teal on hover */
+        color: #ffffff;
+        transform: scale(1.05);
+      }
+    }
+
+    .active {
+      background-color: #16a085; /* Teal for active */
+      color: #ffffff;
+    }
+  }
+}
+
+/* Progress Bar Styling */
+.progress {
+  width: 25%;
+  background: linear-gradient(to right, #16a085, #27ae60); /* Powerful teal-to-green gradient */
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin: 0.5rem auto;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  animation: progressBarAnimation 1.5s ease;
+}
+
+/* Keyframes for animation */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes progressBarAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 25%;
+  }
+}

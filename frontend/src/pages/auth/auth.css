@@ -1,0 +1,234 @@
+/* ============================================================
+   AUTH PAGE – PREMIUM, MODERN & FULLY RESPONSIVE (2025 STYLE)
+   ============================================================ */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), 
+                url('../../assets/Image/slide3.jpg') center/cover no-repeat fixed;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elegant dark overlay + subtle blur */
+.auth-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 0;
+}
+
+/* Ensure content stays above overlay */
+.auth-page > * { position: relative; z-index: 1; }
+
+/* Smooth fade-in */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   LOGO – PREMIUM CIRCLE WITH GLOW HOVER
+   ============================================================ */
+.auth-logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation: fadeUp 1s ease-out;
+    backdrop-filter: blur(4px);
+}
+
+.auth-logo:hover {
+    transform: scale(1.08) rotate(8deg);
+    box-shadow: 0 20px 50px rgba(208, 0, 0, 0.35),
+                0 0 30px rgba(208, 0, 0, 0.4);
+    border-color: rgba(208, 0, 0, 0.6);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .auth-logo { width: 160px; height: 160px; }
+}
+@media (max-width: 480px) {
+    .auth-logo { width: 140px; height: 140px; }
+}
+
+/* ============================================================
+   FORM CARD – GLASSMORPHISM + ELEGANT
+   ============================================================ */
+.auth-form {
+    width: 100%;
+    max-width: 420px;
+    padding: 2.8rem 2.4rem;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.22),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    animation: fadeUp 1.2s ease-out 0.2s both;
+    margin-top: 2rem;
+}
+
+/* Title & Text */
+.auth-form h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.welcome-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+    font-weight: 400;
+}
+
+/* Labels */
+.auth-form label {
+    display: block;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Input Fields – Clean & Modern */
+.auth-form input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    margin-bottom: 1.1rem;
+    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.auth-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.auth-form input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #d00000;
+    box-shadow: 0 0 0 3px rgba(208, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+/* ============================================================
+   BUTTON – RED PREMIUM GRADIENT (MATCHES YOUR BRAND)
+   ============================================================ */
+.common-btn {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, #d00000, #a00000);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(208, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+.common-btn:hover {
+    background: linear-gradient(135deg, #e00000, #b00000);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(208, 0, 0, 0.4);
+}
+
+.common-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* Disabled state */
+.common-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ============================================================
+   LINKS & FOOTER TEXT
+   ============================================================ */
+.auth-form p {
+    text-align: center;
+    margin: 1.3rem 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.92rem;
+}
+
+.auth-form a {
+    color: #ff3333;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    padding: 2px 4px;
+    border-bottom: 1px solid transparent;
+}
+
+.auth-form a:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+/* ============================================================
+   RESPONSIVE – MOBILE FIRST PERFECTION
+   ============================================================ */
+@media (max-width: 768px) {
+    .auth-page {
+        flex-direction: column;
+        padding: 3rem 1.5rem;
+    }
+    .auth-form {
+        margin-top: 1.5rem;
+        padding: 2.2rem 1.8rem;
+        max-width: 90%;
+    }
+    .auth-form h2 { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+    .auth-form {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+    }
+    .auth-form h2 { font-size: 1.6rem; }
+    .common-btn { padding: 0.9rem; font-size: 1rem; }
+}
+
+/* ============================================================
+   reCAPTCHA – CENTERED & CLEAN
+   ============================================================ */
+.recaptcha-container {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}

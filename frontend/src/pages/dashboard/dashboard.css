@@ -1,0 +1,85 @@
+/* Custom Variables for Gold Theme */
+:root {
+  --color-bg-light: #ffffff;        /* Pure white base */
+  --color-text-dark: #333333;        /* Dark text for readability */
+  --color-primary-gold: #b8860b;     /* Dark Goldenrod - Main accent color */
+  --color-light-gold: #ffd700;      /* Gold - Hover/Secondary accent color */
+  --color-hover-gold: #a07809;       /* Darker gold for hover effect */
+  --color-secondary-text: #666;      /* Softer gray for secondary text */
+}
+
+.student-dashboard {
+  padding: 100px 20px;
+  text-align: center;
+  min-height: 65vh;
+  
+  /* UPDATED BACKGROUND: Subtle light gradient with a touch of cream/gold */
+  background: linear-gradient(135deg, var(--color-bg-light), #fff8e0); 
+  
+  /* UPDATED TEXT: Dark color for readability on light background */
+  color: var(--color-text-dark); 
+  font-family: 'Roboto', sans-serif;
+}
+
+.student-dashboard .dashboard-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.student-dashboard h1 {
+    font-size: 2.5rem;
+    
+    /* UPDATED HEADING COLOR: Primary Dark Gold Accent */
+    color: var(--color-primary-gold); 
+    
+    margin-bottom: 20px;
+}
+
+.student-dashboard p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-secondary-text); /* Softer gray maintained */
+}
+
+/* --- Golden Button Styling --- */
+.student-dashboard button {
+    padding: 12px 28px; /* Slightly larger padding for modern look */
+    
+    /* UPDATED BUTTON COLOR: Primary Dark Gold Accent */
+    background-color: var(--color-primary-gold); 
+    color: white; /* White text on dark gold button */
+    
+    border: none;
+    border-radius: 8px; /* Slightly more rounded corners */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.student-dashboard button:hover {
+    /* UPDATED HOVER COLOR: Darker Gold */
+    background-color: var(--color-hover-gold); 
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments for readability */
+@media (max-width: 768px) {
+    .student-dashboard {
+        padding: 60px 15px;
+    }
+    .student-dashboard h1 {
+        font-size: 2rem;
+    }
+    .student-dashboard button {
+        width: 100%;
+        max-width: 300px;
+    }
+}

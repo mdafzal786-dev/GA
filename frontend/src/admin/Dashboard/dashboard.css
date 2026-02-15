@@ -1,0 +1,278 @@
+/* ================= ROOT BACKGROUND ================= */
+.main-content {
+  min-height: 100vh;
+  padding: 30px;
+  background: radial-gradient(circle at top, #f0e6ff, #f6f7fb);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================= DASHBOARD BOXES ================= */
+.dashboard-boxes {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+/* ================= STAT CARD ================= */
+.box {
+  width: 220px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7f3bd4, #5326a8);
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(83, 38, 168, 0.35),
+    inset 0 0 0 rgba(255, 255, 255, 0.2);
+
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated gradient shine */
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35),
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.box:hover::before {
+  transform: translateX(120%);
+}
+
+.box p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.85;
+  letter-spacing: 0.4px;
+}
+
+.box h2 {
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+/* Hover interaction */
+.box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow:
+    0 25px 55px rgba(83, 38, 168, 0.45),
+    inset 0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+/* ================= CHART CONTAINER ================= */
+.chart-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  flex-wrap: wrap;
+}
+
+/* ================= CHART CARD ================= */
+.chart-box {
+  min-width: 400px;
+  padding: 26px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.12);
+  transition: all 0.35s ease;
+  text-align: center;
+}
+
+.chart-box:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.18);
+}
+
+.chart-box h3 {
+  margin-bottom: 20px;
+  color: #432456;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* ================= RECHARTS ENHANCEMENTS ================= */
+.recharts-tooltip-wrapper {
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+.recharts-default-tooltip {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .chart-box {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .box {
+    width: 100%;/* MAIN BACKGROUND */
+.main-content {
+  min-height: 100vh;
+  padding: 30px;
+  background: radial-gradient(circle at top, #f0e6ff, #f6f7fb);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* STAT CARD GRID */
+.dashboard-boxes {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+/* STAT CARD */
+.box {
+  width: 220px;
+  padding: 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7f3bd4, #5326a8);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(83, 38, 168, 0.35);
+  transition: all 0.35s ease;
+}
+
+/* SHINE EFFECT */
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35),
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.box:hover::before {
+  transform: translateX(120%);
+}
+
+.box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 25px 55px rgba(83, 38, 168, 0.45);
+}
+
+.box p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.box h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+/* ICON */
+.icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: all 0.4s ease;
+}
+
+.box:hover .icon {
+  transform: rotate(15deg) scale(1.2);
+}
+
+.icon.course { background: rgba(255,193,7,0.25); color: #ffc107; }
+.icon.lecture { background: rgba(0,196,159,0.25); color: #00c49f; }
+.icon.user { background: rgba(0,136,254,0.25); color: #0088fe; }
+.icon.earning { background: rgba(76,175,80,0.25); color: #4caf50; }
+
+/* CHART SECTION */
+.chart-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  flex-wrap: wrap;
+}
+
+/* CHART CARD */
+.chart-box {
+  min-width: 380px;
+  padding: 26px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  transition: all 0.35s ease;
+  text-align: center;
+}
+
+.chart-box:hover {
+  transform: translateY(-8px);
+}
+
+.chart-box h3 {
+  margin-bottom: 18px;
+  color: #432456;
+  font-weight: 800;
+}
+
+/* TOOLTIP */
+.recharts-default-tooltip {
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .box {
+    width: 100%;
+    max-width: 330px;
+  }
+  .chart-box {
+    min-width: 100%;
+  }
+}
+
+    max-width: 330px;
+  }
+}

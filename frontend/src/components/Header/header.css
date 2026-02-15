@@ -1,0 +1,323 @@
+/* ============================================================
+   GLOBAL DEFAULTS
+============================================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: url('/mnt/data/c8495c4f-725f-4f40-a3b1-799db4eb51c5.png') center/cover fixed;
+  padding-top: 90px;
+  min-height: 100dvh;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+/* ============================================================
+   HEADER — LIGHT MODE DEFAULT
+============================================================ */
+.header {
+  width: min(95%, 1950px);
+  max-width: 1950px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 20px;
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+/* subtle shrink on scroll */
+.scrolled .header {
+  padding: 8px 24px;
+  top: 8px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================================
+   LOGO
+============================================================ */
+.logo-img {
+  height: 58px;
+  transition: transform 0.3s ease;
+}
+.logo-img:hover { transform: scale(1.08); }
+@media (max-width: 768px) { .logo-img { height: 48px; } }
+
+/* ============================================================
+   NAV LINKS
+============================================================ */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.links a,
+.dropbtn,
+.login-button {
+  position: relative;
+  font-size: 15.5px;
+  font-weight: 500;
+  color: #222;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 16px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Liquid hover */
+.links a::before,
+.dropbtn::before,
+.login-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(208, 0, 0, 0.11), rgba(208, 0, 0, 0.05));
+  border-radius: inherit;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.35s ease;
+  z-index: -1;
+}
+
+.links a:hover::before,
+.dropbtn:hover::before,
+.login-button:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.links a:hover,
+.dropbtn:hover,
+.login-button:hover {
+  color: #d00000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(208, 0, 0, 0.18);
+}
+
+/* Login Button */
+.login-button {
+  padding: 11px 28px;
+  border: 2.2px solid #000;
+  background: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.login-button:hover {
+  border-color: #d00000;
+  color: #d00000 !important;
+}
+
+/* ============================================================
+   DROPDOWN
+============================================================ */
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.dropdown-content a {
+  padding: 12px 24px;
+  display: block;
+  color: #333;
+  font-size: 15px;
+  transition: all 0.25s;
+}
+.dropdown-content a:hover {
+  background: #fdf2f2;
+  color: #d00000;
+  padding-left: 30px;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================================
+   MOBILE MENU
+============================================================ */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 12px;
+  transition: background 0.3s;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+
+  .links {
+    position: fixed;
+    top: 82px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(95%, 420px);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-20px);
+    transition: all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 4px;
+  }
+
+  .links.nav-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .links a,
+  .dropbtn,
+  .login-button {
+    color: #222 !important;
+    width: 100%;
+    text-align: center;
+    padding: 16px 24px;
+    border-radius: 14px;
+    margin: 4px 16px;
+  }
+
+  .login-button {
+    background: #d00000;
+    color: white !important;
+    border: none;
+    font-weight: 600;
+    margin: 12px 16px 8px;
+  }
+
+  .dropdown-content {
+    position: static;
+    transform: none;
+    background: #f9f9f9;
+    box-shadow: none;
+    border-radius: 12px;
+    margin: 8px 16px;
+    display: none;
+  }
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+}
+
+/* Close button style inside mobile menu */
+.mobile-close {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 26px;
+  color: #888;
+}
+@media (max-width: 768px) {
+  .mobile-close { display: block; }
+}
+
+/* ============================================================
+   🌙 DARK MODE — FINAL ABSOLUTE VERSION
+============================================================ */
+
+body.dark-mode {
+  background: #0b0f13 !important;
+  color: #e0e0e0 !important;
+}
+
+/* Header */
+body.dark-mode .header {
+  background: rgba(23, 23, 23, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Logo brightness correction */
+body.dark-mode .logo-img {
+  filter: brightness(0.88);
+}
+
+/* Text / links */
+body.dark-mode .links a,
+body.dark-mode .dropbtn,
+body.dark-mode .login-button {
+  color: #e5e5e5 !important;
+}
+
+/* Hover */
+body.dark-mode .links a:hover,
+body.dark-mode .dropbtn:hover,
+body.dark-mode .login-button:hover {
+  color: #ff5b5b !important;
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.22) !important;
+}
+
+/* Dropdown */
+body.dark-mode .dropdown-content {
+  background: rgba(22, 22, 22, 0.97) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+body.dark-mode .dropdown-content a {
+  color: #bfbfbf !important;
+}
+body.dark-mode .dropdown-content a:hover {
+  background: rgba(255, 0, 0, 0.17) !important;
+  color: #ff4d4d !important;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  body.dark-mode .links {
+    background: rgba(15, 15, 15, 0.92) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  body.dark-mode .login-button {
+    background: #ff3535 !important;
+  }
+}

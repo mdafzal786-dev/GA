@@ -1,0 +1,102 @@
+:root {
+    /* Color Palette */
+    --primary-color: #333;
+    --secondary-color: #666;
+    --accent-color: #007bff;
+    --accent-color-hover: #0056b3;
+  
+    /* Typography */
+    --font-size-large: 24px;
+    --font-size-medium: 16px;
+    --font-size-small: 14px;
+  
+    /* Layout */
+    --max-width: 1200px;
+    --padding-large: 80px;
+    --margin-large: 40px;
+    --gap-size: 20px;
+  
+    /* Miscellaneous */
+    --border-radius: 10px;
+    --transition-speed: 0.3s;
+  }
+  
+  .product-description {
+    padding: var(--padding-large) 0;
+    text-align: center;
+    min-height: 55vh;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+  
+  .product-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--gap-size);
+    margin-bottom: var(--margin-large);
+  }
+  
+  .product-image {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  }
+  
+  /* Hover effect on course image */
+  .product-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  }
+  
+  .product-info {
+    text-align: left;
+  }
+  
+  .product-info h2 {
+    font-size: var(--font-size-large);
+    color: var(--primary-color);
+    transition: color var(--transition-speed);
+  }
+  
+  /* Hover effect on course title */
+  .product-info h2:hover {
+    color: var(--accent-color);
+  }
+  
+  .product-info p {
+    font-size: var(--font-size-small);
+    color: var(--secondary-color);
+    margin: 5px 0;
+  }
+  
+  .product-description p {
+    font-size: var(--font-size-medium);
+    color: var(--primary-color);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Button styles */
+  .common-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-medium);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+  }
+  
+  /* Hover effect on buttons */
+  .common-btn:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+  }
+  

@@ -1,0 +1,127 @@
+/* Keyframes for text fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for card hover animation */
+@keyframes cardHover {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Base styling for course card component */
+.course-card {
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 280px;
+  margin: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.8s ease-out both; /* Apply fade-in animation */
+}
+
+.course-card:hover {
+  animation: cardHover 0.4s ease-in-out both; /* Enhanced hover animation */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Course Image */
+.course-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-out 0.2s both; /* Delayed fade-in for image */
+}
+
+/* Course Title */
+.course-title {
+  font-size: 1.2rem;
+  color: #0073e6;
+  margin-bottom: 0.5rem;
+  animation: fadeIn 1s ease-out 0.4s both; /* Delayed fade-in for title */
+}
+
+/* Course Info */
+.course-info {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.2rem 0;
+  animation: fadeIn 1s ease-out 0.6s both; /* Delayed fade-in for info */
+}
+
+/* Button Styling */
+.common-btn {
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 0.5rem;
+  animation: fadeIn 1s ease-out 0.8s both; /* Delayed fade-in for button */
+}
+
+.common-btn:hover {
+  background-color: #005bb5;
+}
+
+.common-btn:active {
+  transform: scale(0.98);
+}
+
+.common-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Admin Delete Button Styling */
+.common-btn.delete-btn {
+  background-color: #e63946;
+}
+
+.common-btn.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+  .course-card {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .course-title {
+    font-size: 1.1rem;
+  }
+
+  .course-info {
+    font-size: 0.85rem;
+  }
+
+  .common-btn {
+    font-size: 0.85rem;
+  }
+}

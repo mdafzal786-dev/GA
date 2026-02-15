@@ -1,0 +1,98 @@
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #4b1e73, #2a0f44);
+  color: #ffffff;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  transition: width 0.35s ease;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.35);
+
+  @media (max-width: 768px) {
+    width: 60px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 12px;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+      cursor: pointer;
+      padding: 14px 16px;
+      border-radius: 14px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      @media (max-width: 768px) {
+        padding: 10px;
+      }
+
+      /* Active / Hover Highlight */
+      &:hover {
+        background: rgba(255, 255, 255, 0.12);
+        transform: translateX(6px);
+      }
+
+      /* Glow bar */
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 4px;
+        height: 0;
+        background: linear-gradient(180deg, #ff9d00, #ff5722);
+        border-radius: 0 4px 4px 0;
+        transition: height 0.3s ease, top 0.3s ease;
+      }
+
+      &:hover::before {
+        height: 60%;
+        top: 20%;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 500;
+
+        svg {
+          font-size: 20px;
+          transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        span {
+          margin-left: 14px;
+          white-space: nowrap;
+          transition: opacity 0.3s ease;
+
+          @media (max-width: 768px) {
+            opacity: 0;
+            width: 0;
+            overflow: hidden;
+          }
+        }
+      }
+
+      &:hover a svg {
+        transform: scale(1.2) rotate(6deg);
+        color: #ffb703;
+      }
+    }
+  }
+}
+
+/* ================= DASHBOARD LAYOUT ================= */
+.dashboard-admin {
+  display: flex;
+  min-height: 85vh;
+  margin-top: 20px;
+  background: #f6f7fb;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}

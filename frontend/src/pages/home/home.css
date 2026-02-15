@@ -1,0 +1,306 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* ========================================= */
+/*  ROOT COLORS                              */
+/* ========================================= */
+:root {
+  --color-bg-dark: #000;
+  --color-text-light: #fff;
+  --color-accent-gold: #b8860b;
+  --color-light-gold: #ffc107;
+  --color-hover-red: #ff1a1a;
+  --color-primary: #4f46e5;
+  --color-primary-dark: #3730a3;
+}
+
+/* ========================================= */
+/*  GLOBAL RESET                             */
+/* ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
+  font-family: Arial, sans-serif;
+}
+
+/* ========================================= */
+/*  SLIDER SECTION                            */
+/* ========================================= */
+.slider {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slide-image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+/* Slick Arrows Custom */
+.slick-prev,
+.slick-next {
+  width: 45px;
+  height: 45px;
+  z-index: 999;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 35px;
+  color: var(--color-light-gold);
+  opacity: 1;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: var(--color-accent-gold);
+}
+
+/* Dots */
+.slick-dots li button:before {
+  font-size: 13px;
+  color: var(--color-light-gold);
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--color-accent-gold);
+}
+
+/* ========================================= */
+/*  HOME CONTENT                              */
+/* ========================================= */
+.home-content {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+/* Running Colorful Heading Animation */
+@keyframes colorfulRunningText {
+  0% { transform: translateX(100%); background-position: 0%; }
+  100% { transform: translateX(-100%); background-position: 200%; }
+}
+
+.home-content h1 {
+  font-size: 3em;
+  color: transparent;
+  white-space: nowrap;
+  background: linear-gradient(90deg, #ff00cc, #00ffff, #ffcc00, #ff0033);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: colorfulRunningText 10s linear infinite;
+}
+
+/* Glowing Text */
+.home-content p {
+  margin-top: 18px;
+  font-size: 1.6em;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff5733, #33ff57, #3375ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+  0% { opacity: .6; }
+  100% { opacity: 1; }
+}
+
+/* Buttons */
+.common-btn {
+  padding: 12px 22px;
+  margin-top: 20px;
+  background: var(--color-light-gold);
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.common-btn:hover {
+  background: var(--color-hover-red);
+  color: #fff;
+}
+
+/* ========================================= */
+/* ⭐ SCROLL TO TOP BUTTON                     */
+/* ========================================= */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  background: var(--color-light-gold);
+  color: #000;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px rgba(255, 193, 7, 0.7);
+  transition: .3s;
+  z-index: 9999;
+}
+
+.scroll-top-btn:hover {
+  background: var(--color-accent-gold);
+  transform: scale(1.1);
+}
+
+/* ========================================= */
+/*  CHATBOT STYLES                             */
+/* ========================================= */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.chatbot-container.open {
+  width: 320px;
+  max-height: 450px;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbot-header {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.chat-toggle {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Chat messages */
+.chatbot-messages {
+  max-height: 280px;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  word-wrap: break-word;
+  max-width: 80%;
+}
+
+.chat-message.user {
+  background-color: var(--color-primary);
+  color: white;
+  align-self: flex-end;
+}
+
+.chat-message.bot {
+  background-color: #e5e7eb;
+  color: black;
+  align-self: flex-start;
+}
+
+/* Chat input */
+.chatbot-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.chatbot-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.chatbot-input button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.chatbot-input button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Scrollbar for messages */
+.chatbot-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* ========================================= */
+/* RESPONSIVE DESIGN                          */
+/* ========================================= */
+@media (max-width: 768px) {
+  .slide-image {
+    height: 300px;
+  }
+  .home-content h1 {
+    font-size: 2.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-image {
+    height: 240px;
+  }
+  .home-content h1 {
+    font-size: 1.7em;
+  }
+  .scroll-top-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .chatbot-container.open {
+    width: 280px;
+    max-height: 400px;
+  }
+}

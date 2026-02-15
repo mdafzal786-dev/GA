@@ -1,0 +1,204 @@
+/* -----------------------------------
+   Light Theme Variables
+------------------------------------*/
+:root {
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
+  --text-dark: #343a40;
+  --accent-purple: #8a4baf;
+  --accent-yellow: #f7b731;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-prominent: rgba(0, 0, 0, 0.2);
+}
+
+/* -----------------------------------
+   Testimonials Section
+------------------------------------*/
+.testimonials {
+  padding: 50px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--bg-light), #e0e0e0);
+  color: var(--text-dark);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 10px var(--shadow-light);
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  animation: fadeInUp 1s ease-in-out;
+  color: var(--accent-purple);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* -----------------------------------
+   Cards Grid
+------------------------------------*/
+.testimonials-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-items: center;
+  margin-top: 40px;
+}
+
+/* -----------------------------------
+   Individual Card
+------------------------------------*/
+.testimonial-card {
+  background: linear-gradient(135deg, var(--bg-white), #f9f9f9);
+  border-radius: 15px;
+  box-shadow: 0 8px 15px var(--shadow-light);
+  padding: 30px;
+  width: 100%;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(138, 75, 175, 0.3);
+}
+
+/* -----------------------------------
+   Student Image
+------------------------------------*/
+.student-image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 5px var(--bg-white), 0 0 0 7px var(--accent-purple);
+  animation: zoomIn 1.5s ease-out;
+}
+
+.student-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* -----------------------------------
+   Info Section
+------------------------------------*/
+.info {
+  animation: fadeInUp 1s ease-in-out 0.4s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--accent-purple);
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.position {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-top: 5px;
+}
+
+/* Hover Effects */
+.testimonial-card:hover .name {
+  color: var(--accent-yellow);
+  transform: scale(1.1);
+}
+
+.testimonial-card:hover .position {
+  color: var(--accent-purple);
+  transform: scale(1.05);
+}
+
+/* Image glow on hover */
+.testimonial-card:hover .student-image img {
+  filter: brightness(1.05);
+}
+
+/* -----------------------------------
+   Responsive Adjustments
+------------------------------------*/
+
+/* Tablets */
+@media (max-width: 992px) {
+  .testimonials-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .testimonials-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    width: 90%;
+    padding: 22px;
+  }
+
+  .testimonials h2 {
+    font-size: 2rem;
+  }
+}
+
+/* 🔥 Phone (iPhone / Small Screens) */
+@media (max-width: 480px) {
+
+  .testimonials {
+    padding: 30px 10px;
+  }
+
+  .testimonials h2 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+  }
+
+  .testimonials-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .testimonial-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .student-image {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 3px var(--bg-white), 0 0 0 5px var(--accent-purple);
+  }
+
+  .name {
+    font-size: 1.1rem;
+  }
+
+  .position {
+    font-size: 0.9rem;
+  }
+}
+
+/* -----------------------------------
+   Animations
+------------------------------------*/
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,196 @@
+/* ==========================================================
+   CONTAINER
+=========================================================== */
+.solution-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ==========================================================
+   TITLE STYLING
+=========================================================== */
+.title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #0a0a23;
+  letter-spacing: 0.4px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+  font-size: 15px;
+}
+
+/* ==========================================================
+   UNIT GRID
+=========================================================== */
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 650px) {
+  .unit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================
+   UNIT CARD
+=========================================================== */
+.unit-card {
+  background: #ffffff;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+.unit-card:hover {
+  border-color: #c4d9ff;
+  box-shadow: 0 6px 18px rgba(0, 80, 255, 0.14);
+  transform: translateY(-3px);
+}
+
+/* ==========================================================
+   UNIT HEADER
+=========================================================== */
+.unit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unit-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.arrow {
+  font-size: 18px;
+  color: #555;
+  transition: transform 0.35s ease;
+}
+
+.arrow.open {
+  transform: rotate(90deg);
+}
+
+/* ==========================================================
+   CHAPTER LIST & ROW
+=========================================================== */
+.chapter-list {
+  margin-top: 14px;
+  animation: fadeDown 0.25s ease forwards;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.chapter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #e5e7eb;
+  transition: 0.2s;
+}
+
+.chapter-row:hover {
+  background: #f3f8ff;
+  border-color: #cddcff;
+}
+
+.chapter-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+}
+
+/* ==========================================================
+   ACTION BUTTONS
+=========================================================== */
+.chapter-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* VIEW button */
+.view-btn {
+  background: #1d4ed8;
+  border: 1px solid transparent;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13.5px;
+  transition: 0.25s ease;
+}
+
+.view-btn:hover {
+  background: #153fa8;
+  box-shadow: 0 4px 14px rgba(29,78,216,0.28);
+}
+
+/* DOWNLOAD button */
+.download-btn {
+  background: #dc2626;
+  border: 1px solid transparent;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13.5px;
+  transition: 0.25s ease;
+}
+
+.download-btn:hover {
+  background: #b91c1c;
+  box-shadow: 0 4px 14px rgba(220,38,38,0.25);
+}
+
+/* ==========================================================
+   MOBILE UI
+=========================================================== */
+@media (max-width: 768px) {
+  .chapter-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .chapter-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 500px) {
+  .unit-title {
+    font-size: 18px;
+  }
+
+  .chapter-name {
+    font-size: 15px;
+  }
+
+  .view-btn, .download-btn {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+}

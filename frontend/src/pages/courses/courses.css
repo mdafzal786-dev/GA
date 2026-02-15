@@ -1,0 +1,201 @@
+/* Main Courses Container */
+.courses {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(145deg, #f0f0f0, #ffffff);
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Section Header */
+.courses h2 {
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, #e91e63, #ff9800, #2196f3);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  animation: slideInGlow 1.2s ease forwards;
+  transition: all 0.5s ease;
+}
+
+.courses h2:hover {
+  filter: brightness(1.3);
+  transform: scale(1.05);
+}
+
+@keyframes slideInGlow {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Modern Search Bar */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-wrapper input {
+  width: 350px;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: 1px solid #cfcfcf;
+  background: #ffffff;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.search-wrapper input::placeholder {
+  color: #9a9a9a;
+}
+
+.search-wrapper input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 6px 22px rgba(0, 123, 255, 0.25);
+  transform: scale(1.02);
+}
+
+/* "No Courses Yet!" Text */
+.courses p {
+  font-size: 1.2rem;
+  color: #6c757d;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+.courses p:hover {
+  color: #007bff;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Courses Grid */
+.course-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+/* Course Card Style */
+.course-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 280px;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: floatIn 1s ease both;
+  border: 1px solid #e0e0e0;
+}
+
+.course-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(138, 75, 175, 0.15), transparent 70%);
+  animation: pulseBorder 4s infinite linear;
+  z-index: 0;
+}
+
+.course-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.3);
+}
+
+@keyframes floatIn {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseBorder {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.4;
+  }
+}
+
+/* Inside Course Card */
+.course-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #343a40;
+  margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.course-info {
+  font-size: 1rem;
+  color: #6c757d;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.course-card:hover .course-title {
+  color: #e91e63;
+}
+
+.course-card:hover .course-info {
+  color: #343a40;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .course-card {
+    width: 90%;
+  }
+
+  .courses h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses h2 {
+    font-size: 1.8rem;
+  }
+
+  .courses p {
+    font-size: 1rem;
+  }
+
+  .search-wrapper input {
+    width: 80%;
+  }
+}

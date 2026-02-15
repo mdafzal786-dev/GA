@@ -1,0 +1,60 @@
+.payment-success-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  background-color: #1e1e1e; /* Dark background for VIP feel */
+
+  .success-message {
+    background-color: #2d2d2d; /* Darker card background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adding smooth animation */
+  }
+
+  h2 {
+    font-size: 24px;
+    color: #f8c300; /* Gold for VIP text */
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 16px;
+    color: #f8c300; /* Gold for VIP text */
+    margin-bottom: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #8a4baf; /* Rich purple for links */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+  }
+
+  a:hover {
+    color: #f8c300; /* Gold on hover */
+  }
+
+  /* Adding hover effect and animation for the success message card */
+  .success-message:hover {
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+  }
+
+  /* Adding subtle fade-in animation to the entire page */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .payment-success-page {
+    animation: fadeIn 0.8s ease-in-out; /* Apply fade-in animation */
+  }
+}

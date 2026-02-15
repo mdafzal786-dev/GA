@@ -1,0 +1,67 @@
+/* Product Card Container */
+.product-card {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+  margin: 20px;
+}
+
+/* Hover Effect for Card */
+.product-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Image Styling */
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Product Title */
+.product-card h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Product Info Text */
+.product-card p {
+  font-size: 1em;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Common Button Styling */
+.common-btn {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+/* Button Hover Effect */
+.common-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Delete Button Styling */
+.common-btn[style*="background: red"] {
+  background-color: red;
+}
+
+.common-btn[style*="background: red"]:hover {
+  background-color: darkred;
+}
