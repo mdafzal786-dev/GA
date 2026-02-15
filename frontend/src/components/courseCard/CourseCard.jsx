@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import "./courseCard.css";
+import "./CourseCard.css";
 import { server } from "../../main";
 import { UserData } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";

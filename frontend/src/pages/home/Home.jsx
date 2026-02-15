@@ -7,7 +7,7 @@ import { useEffect, useState, lazy, Suspense } from "react";
 import Slider from "react-slick";
 
 import Testimonials from "../../components/testimonials/Testimonials";
-import About from "../../pages/about/About";
+import About from "../about/About";
 import Courses from "../courses/courses";
 
 // Lazy load chatbot (performance boost)

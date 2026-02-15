@@ -105,7 +105,7 @@ const Footer = () => {
           <br />
           Made with ❤️ By
           <a
-            href="https://mdafzal.netlify.app"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
           >
