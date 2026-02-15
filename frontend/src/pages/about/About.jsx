@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
 import founderImage from "../../assets/Image/Afzal1.jpg";
-import logo from "../../assets/Image/logo.png";
+import logo from "../../assets/Image/Logo.png";
 
 const About = () => {
     return (

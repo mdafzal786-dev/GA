@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import "./productdescription.css";
 import { useNavigate, useParams } from "react-router-dom";
-import logo from "../../assets/Image/logo.png";
+import logo from "../../assets/Image/Logo.png";
 // import { CourseData } from '../../context/CourseContext';
 import { server } from "../../main";
 import axios from "axios";

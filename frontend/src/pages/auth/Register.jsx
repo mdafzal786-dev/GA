@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./auth.css";
 import { Link, useNavigate } from "react-router-dom";
 import { UserData } from "../../context/UserContext";
-import logo from "../../assets/Image/logo.png";
+import logo from "../../assets/Image/Logo.png";
 
 const Register = () => {
   const navigate = useNavigate();

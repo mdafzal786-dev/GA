@@ -3,7 +3,7 @@ import "./auth.css";
 import { Link, useNavigate } from "react-router-dom";
 import { UserData } from "../../context/UserContext";
 import ReCAPTCHA from "react-google-recaptcha";
-import logo from '../../assets/Image/logo.png'
+import logo from '../../assets/Image/Logo.png'
 
 const Verify = () => {
   const [otp, setOtp] = useState("");
